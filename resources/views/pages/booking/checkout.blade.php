@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Checkout StayKos')
+@section('title', 'Checkout')
 
 @section('content')
     <div id="Background"
@@ -11,7 +11,7 @@
             class="w-12 h-12 flex items-center justify-center shrink-0 rounded-full overflow-hidden bg-white">
             <img src="{{ asset('assets/images/icons/arrow-left.svg') }}" class="w-[28px] h-[28px]" alt="icon">
         </a>
-        <p class="font-semibold">Checkout StayKos</p>
+        <p class="font-semibold">Checkout Boarding House</p>
         <div class="dummy-btn w-12"></div>
     </div>
     <div id="Header" class="relative flex items-center justify-between gap-2 px-5 mt-[18px]">
@@ -192,7 +192,8 @@
                     $downPayment = $total * 0.3;
                 @endphp
                 <div id="DownPayment-Tab" class="tab-content flex flex-col gap-4">
-                    <p class="text-sm text-ngekos-grey">You need to make the payment in cash after surveying the boarding house</p>
+                    <p class="text-sm text-ngekos-grey">You need to make the payment in cash after surveying the boarding
+                        house</p>
                     <div class="flex items-center justify-between">
                         <div class="flex items-center gap-3">
                             <img src="{{ asset('assets/images/icons/card-tick.svg') }}" class="w-6 h-6 flex shrink-0"
@@ -236,7 +237,8 @@
                     </div>
                 </div>
                 <div id="FullPayment-Tab" class="tab-content flex flex-col gap-4 hidden">
-                    <p class="text-sm text-ngekos-grey">You do not need to pay any additional fees when surveying the boarding house</p>
+                    <p class="text-sm text-ngekos-grey">You do not need to pay any additional fees when surveying the
+                        boarding house</p>
                     <div class="flex items-center justify-between">
                         <div class="flex items-center gap-3">
                             <img src="{{ asset('assets/images/icons/card-tick.svg') }}" class="w-6 h-6 flex shrink-0"
@@ -285,7 +287,6 @@
                 <div class="flex items-center justify-between rounded-[40px] py-4 px-6 bg-ngekos-black">
                     <div class="flex flex-col gap-[2px]">
                         <p id="price" class="font-bold text-xl leading-[30px] text-white">
-                            <!-- Price mengikuti pilihan yang dipilih dan diambil dari text grand total -->
                         </p>
                         <span class="text-sm text-white">Grand Total</span>
                     </div>

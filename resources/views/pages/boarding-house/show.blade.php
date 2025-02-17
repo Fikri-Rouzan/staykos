@@ -39,7 +39,7 @@
                 <div
                     class="flex flex-col items-center text-center shrink-0 rounded-[22px] border border-[#F1F2F6] p-[10px_20px] gap-2 bg-white">
                     <img src="{{ asset('assets/images/icons/star.svg') }}" class="w-6 h-6" alt="icon">
-                    <p class="font-bold text-sm">4/5</p>
+                    <p class="font-bold text-sm">5/5</p>
                 </div>
             </div>
             <hr class="border-[#F1F2F6] mx-5">
@@ -77,7 +77,7 @@
                     <div class="swiper-slide !w-fit">
                         <button
                             class="tab-link rounded-full p-[8px_14px] border border-[#F1F2F6] text-sm font-semibold hover:bg-ngekos-black hover:text-white transition-all duration-300 !bg-ngekos-black !text-white"
-                            data-target-tab="#Bonus-Tab">{{ $boardingHouse->name }} Bonus</button>
+                            data-target-tab="#Bonus-Tab">Bonuses</button>
                     </div>
                     <div class="swiper-slide !w-fit">
                         <button
@@ -148,12 +148,17 @@
                         @endforeach
                     </div>
                 </div>
-                <div id="Rules-Tab" class="tab-content flex-col gap-5 hidden">Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Porro, vitae.</div>
-                <div id="Contact-Tab" class="tab-content flex-col gap-5 hidden">Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Porro, vitae.</div>
-                <div id="Rewards-Tab" class="tab-content flex-col gap-5 hidden">Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Porro, vitae.</div>
+                <div id="Rules-Tab" class="tab-content flex-col gap-5 hidden">Guests are requested to observe quiet hours
+                    from 10:00 PM to 8:00 AM, refrain from smoking indoors, and report any damages immediately. Pets are
+                    only allowed in designated areas. Large parties or gatherings require prior approval. Please keep common
+                    areas clean, dispose of waste properly, and always carry your access card/key. Report any suspicious
+                    activity to management promptly.</div>
+                <div id="Contact-Tab" class="tab-content flex-col gap-5 hidden">+62-123-456-7890.</div>
+                <div id="Rewards-Tab" class="tab-content flex-col gap-5 hidden">Guests can enjoy a complimentary spa
+                    voucher, late check-out, a welcome gift upon arrival, and free room upgrades (subject to availability).
+                    Additional perks include exclusive discounts on nearby attractions, complimentary breakfast, fitness
+                    classes, free airport transfers, and personalized concierge service for reservations and
+                    recommendations.</div>
             </div>
         </main>
         <div id="BottomNav" class="relative flex w-full h-[138px] shrink-0">

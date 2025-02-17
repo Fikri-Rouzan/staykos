@@ -28,7 +28,8 @@
                             </div>
                             <div class="flex flex-col gap-[2px]">
                                 <h3 class="font-semibold">{{ $category->name }}</h3>
-                                <p class="text-sm text-ngekos-grey">{{ $category->boardingHouses->count() }} Boarding Houses</p>
+                                <p class="text-sm text-ngekos-grey">{{ $category->boardingHouses->count() }} Boarding Houses
+                                </p>
                             </div>
                         </div>
                     </a>
@@ -121,7 +122,7 @@
     </section>
     <section id="Best" class="flex flex-col gap-4 px-5 mt-[30px]">
         <div class="flex items-center justify-between">
-            <h2 class="font-bold">All Great StayKos</h2>
+            <h2 class="font-bold">All Great Boarding Houses</h2>
             <a href="#">
                 <div class="flex items-center gap-2">
                     <span>See all</span>

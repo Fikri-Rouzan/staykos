@@ -50,7 +50,7 @@ class BoardingHouseResource extends Resource
                                 Forms\Components\Textarea::make('address')
                                     ->required(),
                             ]),
-                        Forms\Components\Tabs\Tab::make('StayKos Bonus')
+                        Forms\Components\Tabs\Tab::make('Bonus')
                             ->schema([
                                 Forms\Components\Repeater::make('bonuses')
                                     ->relationship('bonuses')

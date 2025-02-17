@@ -60,7 +60,7 @@
                     <hr class="border-[#F1F2F6]">
                     <p class="font-semibold text-lg text-ngekos-orange">Rp
                         {{ number_format($room->price_per_month, 0, ',', '.') }}<span
-                            class="text-sm text-ngekos-grey font-normal">/bulan</span></p>
+                            class="text-sm text-ngekos-grey font-normal">/Month</span></p>
                 </div>
             </div>
         </div>
@@ -140,7 +140,6 @@
                 <div class="flex items-center justify-between rounded-[40px] py-4 px-6 bg-ngekos-black">
                     <div class="flex flex-col gap-[2px]">
                         <p id="price" class="font-bold text-xl leading-[30px] text-white">
-                            <!-- price dari js -->
                         </p>
                         <span class="text-sm text-white">Grand Total</span>
                     </div>
