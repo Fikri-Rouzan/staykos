@@ -58,7 +58,7 @@ class MidtransController extends Controller
 
                 $twilio->messages
                     ->create(
-                        "whatsapp:+62" . $transaction->phone,
+                        "whatsapp:+" . $transaction->phone,
                         array(
                             "from" => $fromNumber,
                             "body" => $message

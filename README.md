@@ -32,6 +32,7 @@ A modern rental property management and booking platform designed to streamline 
     - MySQL installed and running on your system.
     - An active [Twilio](https://www.twilio.com/en-us) account and WhatsApp Sandbox.
     - An active [Midtrans](https://midtrans.com) account.
+    - An active [ngrok](https://ngrok.com/) account and ngrok CLI installed on your system.
 
 2. **Twilio Account Setup**
     - Visit the official [Twilio website](https://www.twilio.com/en-us).
@@ -47,32 +48,38 @@ A modern rental property management and booking platform designed to streamline 
     - Navigate to **Settings > Access Keys** on the left sidebar.
     - Copy the generated **Server Key** to use during the environment configuration phase.
 
-4. **Clone the Repository**
+4. **ngrok CLI & Authtoken Setup**
+    - Visit the official [ngrok website](https://ngrok.com).
+    - Sign up for a new account or log in to your existing account.
+    - Once redirected to the dashboard, select the **Share Localhost** menu, follow the instructional steps, and ensure you select the **Command Line** platform.
+    - Follow the installation and setup steps only up to configuring your authtoken in the terminal.
+
+5. **Clone the Repository**
 
 ```bash
 git clone https://github.com/Fikri-Rouzan/staykos.git
 cd staykos
 ```
 
-5. **Install Packages**
+6. **Install Packages**
 
 ```bash
 composer install
 ```
 
-6. **Copy Environment File**
+7. **Copy Environment File**
 
 ```bash
 cp .env.example .env
 ```
 
-7. **Generate Application Key**
+8. **Generate Application Key**
 
 ```bash
 php artisan key:generate
 ```
 
-8. **Configure Environment Variables**
+9. **Configure Environment Variables**
 
     Open the `.env` file and configure the following variables
 
@@ -94,26 +101,51 @@ php artisan key:generate
     MIDTRANS_IS_3DS=true
     ```
 
-9. **Run Migrations**
+10. **Run Migrations**
 
 ```bash
 php artisan migrate
 ```
 
-10. **Create Filament Admin User**
+11. **Create Filament Admin User**
 
 ```bash
 php artisan make:filament-user
 ```
 
-11. **Create Storage Link**
+12. **Create Storage Link**
 
 ```bash
 php artisan storage:link
 ```
 
-12. **Run the Program**
+13. **Run the Program**
 
 ```bash
 php artisan serve
 ```
+
+14. **Start ngrok Tunneling**
+
+```bash
+ngrok http 8000
+```
+
+15. **Midtrans Redirect & Notification URL Setup with ngrok**
+
+- Copy the **Forwarding URL** provided by ngrok.
+- Return to the Midtrans Sandbox dashboard, navigate to **Settings > Snap Preferences > System Settings**, and scroll down to **Redirection Settings**.
+- Paste your ngrok URL into the **Finish URL** field and save changes. For example:
+    ```text
+    https://your-subdomain.ngrok-free.app/booking-success
+    ```
+- Navigate to **Settings > Payment > Notification URL**.
+- Paste your ngrok URL into the **Payment notification URL** field and save changes. For example:
+    ```text
+    https://your-subdomain.ngrok-free.app/api/midtrans-callback
+    ```
+
+16. **Midtrans Payment Simulation**
+
+- Visit the official [Midtrans Payment Simulator](https://simulator.sandbox.midtrans.com).
+- Select your desired payment channel matching the payment method selected in your application to simulate transactions.
