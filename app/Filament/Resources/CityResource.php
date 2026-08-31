@@ -30,6 +30,7 @@ class CityResource extends Resource
                     ->columnSpan(2),
                 Forms\Components\TextInput::make('name')
                     ->required()
+                    ->placeholder('Type your city name')
                     ->columnSpan(2),
             ]);
     }

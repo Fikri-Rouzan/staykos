@@ -25,6 +25,17 @@ class Transaction extends Model
         'transaction_date'
     ];
 
+    public static function generateUniqueCode()
+    {
+        $prefix = 'SK';
+
+        do {
+            $randomString = $prefix . mt_rand(100000, 999999);
+        } while (self::where('code', $randomString)->exists());
+
+        return $randomString;
+    }
+
     public function boardingHouse()
     {
         return $this->belongsTo(BoardingHouse::class);

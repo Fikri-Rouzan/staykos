@@ -25,11 +25,12 @@ class CategoryResource extends Resource
             ->schema([
                 Forms\Components\FileUpload::make('image')
                     ->image()
-                    ->directory('cities')
+                    ->directory('categories')
                     ->required()
                     ->columnSpan(2),
                 Forms\Components\TextInput::make('name')
                     ->required()
+                    ->placeholder('Type your category name')
                     ->columnSpan(2),
             ]);
     }

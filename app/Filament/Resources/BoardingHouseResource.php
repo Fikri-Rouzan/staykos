@@ -34,7 +34,8 @@ class BoardingHouseResource extends Resource
                                     ->directory('boarding_house')
                                     ->required(),
                                 Forms\Components\TextInput::make('name')
-                                    ->required(),
+                                    ->required()
+                                    ->placeholder('Type your boarding house name'),
                                 Forms\Components\Select::make('city_id')
                                     ->relationship('city', 'name')
                                     ->required(),
@@ -42,13 +43,17 @@ class BoardingHouseResource extends Resource
                                     ->relationship('category', 'name')
                                     ->required(),
                                 Forms\Components\RichEditor::make('description')
-                                    ->required(),
+                                    ->required()
+                                    ->placeholder('Type your description'),
                                 Forms\Components\TextInput::make('price')
                                     ->numeric()
                                     ->prefix('IDR')
-                                    ->required(),
+                                    ->minValue(0)
+                                    ->required()
+                                    ->placeholder('Type your price'),
                                 Forms\Components\Textarea::make('address')
-                                    ->required(),
+                                    ->required()
+                                    ->placeholder('Type your address'),
                             ]),
                         Forms\Components\Tabs\Tab::make('Bonus')
                             ->schema([
@@ -60,9 +65,11 @@ class BoardingHouseResource extends Resource
                                             ->directory('bonuses')
                                             ->required(),
                                         Forms\Components\TextInput::make('name')
-                                            ->required(),
+                                            ->required()
+                                            ->placeholder('Type your bonus name'),
                                         Forms\Components\TextInput::make('description')
-                                            ->required(),
+                                            ->required()
+                                            ->placeholder('Type your bonus description'),
                                     ])
                             ]),
                         Forms\Components\Tabs\Tab::make('Room')
@@ -71,19 +78,30 @@ class BoardingHouseResource extends Resource
                                     ->relationship('rooms')
                                     ->schema([
                                         Forms\Components\TextInput::make('name')
-                                            ->required(),
+                                            ->required()
+                                            ->placeholder('Type your room name'),
                                         Forms\Components\TextInput::make('room_type')
-                                            ->required(),
+                                            ->label('Room Type')
+                                            ->required()
+                                            ->placeholder('Type your room type'),
                                         Forms\Components\TextInput::make('square_feet')
+                                            ->label('Square Feet')
                                             ->numeric()
-                                            ->required(),
+                                            ->minValue(0)
+                                            ->required()
+                                            ->placeholder('Type the square feet'),
                                         Forms\Components\TextInput::make('capacity')
                                             ->numeric()
-                                            ->required(),
+                                            ->minValue(1)
+                                            ->required()
+                                            ->placeholder('Type the capacity'),
                                         Forms\Components\TextInput::make('price_per_month')
+                                            ->label('Price per Month')
                                             ->numeric()
+                                            ->minValue(0)
                                             ->prefix('IDR')
-                                            ->required(),
+                                            ->required()
+                                            ->placeholder('Type the price per month'),
                                         Forms\Components\Toggle::make('is_available')
                                             ->required(),
                                         Forms\Components\Repeater::make('images')

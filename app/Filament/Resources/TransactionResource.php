@@ -26,38 +26,56 @@ class TransactionResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('code')
-                    ->required(),
+                    ->label('Booking Code')
+                    ->required()
+                    ->readOnly()
+                    ->default(fn() => Transaction::generateUniqueCode())
+                    ->placeholder('AUTO'),
                 Forms\Components\Select::make('boarding_house_id')
+                    ->label('Boarding House')
                     ->relationship('boardingHouse', 'name')
                     ->required(),
                 Forms\Components\Select::make('room_id')
                     ->relationship('room', 'name')
                     ->required(),
                 Forms\Components\TextInput::make('name')
-                    ->required(),
+                    ->required()
+                    ->placeholder('Type the name'),
                 Forms\Components\TextInput::make('email')
                     ->email()
-                    ->required(),
+                    ->required()
+                    ->placeholder('Type the email address'),
                 Forms\Components\TextInput::make('phone')
-                    ->required(),
+                    ->required()
+                    ->placeholder('Type the phone number'),
                 Forms\Components\Select::make('payment_method')
+                    ->label('Payment Method')
                     ->options([
                         'down_payment' => 'Down Payment',
                         'full_payment' => 'Full Payment'
                     ])
                     ->required(),
                 Forms\Components\TextInput::make('payment_status')
-                    ->required(),
+                    ->label('Payment Status')
+                    ->required()
+                    ->placeholder('Type the payment status'),
                 Forms\Components\DatePicker::make('start_date')
+                    ->label('Start Date')
                     ->required(),
                 Forms\Components\TextInput::make('duration')
                     ->numeric()
-                    ->required(),
+                    ->minValue(1)
+                    ->required()
+                    ->placeholder('Type the duration in months'),
                 Forms\Components\TextInput::make('total_amount')
+                    ->label('Total Amount')
                     ->numeric()
                     ->prefix('IDR')
-                    ->required(),
+                    ->minValue(0)
+                    ->required()
+                    ->placeholder('Type the total amount'),
                 Forms\Components\DatePicker::make('transaction_date')
+                    ->label('Transaction Date')
                     ->required(),
             ]);
     }

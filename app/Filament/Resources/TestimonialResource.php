@@ -31,19 +31,25 @@ class TestimonialResource extends Resource
                     ->required()
                     ->columnSpan(2),
                 Forms\Components\Select::make('boarding_house_id')
+                    ->label('Boarding House')
                     ->relationship('boardingHouse', 'name')
                     ->required()
                     ->columnSpan(2),
                 Forms\Components\Textarea::make('content')
                     ->required()
+                    ->placeholder('Type your testimonial content')
                     ->columnSpan(2),
                 Forms\Components\TextInput::make('name')
-                    ->required(),
+                    ->required()
+                    ->placeholder('Type your name')
+                    ->columnSpanFull(),
                 Forms\Components\TextInput::make('rating')
                     ->numeric()
                     ->minValue(1)
                     ->maxValue(5)
-                    ->required(),
+                    ->required()
+                    ->placeholder('Type your rating')
+                    ->columnSpanFull(),
             ]);
     }
 
