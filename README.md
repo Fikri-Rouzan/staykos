@@ -132,20 +132,18 @@ ngrok http 8000
 ```
 
 15. **Midtrans Redirect & Notification URL Setup with ngrok**
-
-- Copy the **Forwarding URL** provided by ngrok.
-- Return to the Midtrans Sandbox dashboard, navigate to **Settings > Snap Preferences > System Settings**, and scroll down to **Redirection Settings**.
-- Paste your ngrok URL into the **Finish URL** field and save changes. For example:
-    ```text
-    https://your-subdomain.ngrok-free.app/booking-success
-    ```
-- Navigate to **Settings > Payment > Notification URL**.
-- Paste your ngrok URL into the **Payment notification URL** field and save changes. For example:
-    ```text
-    https://your-subdomain.ngrok-free.app/api/midtrans-callback
-    ```
+    - Copy the **Forwarding URL** provided by ngrok.
+    - Return to the Midtrans Sandbox dashboard, navigate to **Settings > Snap Preferences > System Settings**, and scroll down to **Redirection Settings**.
+    - Paste your ngrok URL into the **Finish URL** field and save changes. For example:
+        ```text
+        https://your-subdomain.ngrok-free.app/booking-success
+        ```
+    - Navigate to **Settings > Payment > Notification URL**.
+    - Paste your ngrok URL into the **Payment notification URL** field and save changes. For example:
+        ```text
+        https://your-subdomain.ngrok-free.app/api/midtrans-callback
+        ```
 
 16. **Midtrans Payment Simulation**
-
-- Visit the official [Midtrans Payment Simulator](https://simulator.sandbox.midtrans.com).
-- Select your desired payment channel matching the payment method selected in your application to simulate transactions.
+    - Visit the official [Midtrans Payment Simulator](https://simulator.sandbox.midtrans.com).
+    - Select your desired payment channel matching the payment method selected in your application to simulate transactions.
