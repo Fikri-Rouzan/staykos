@@ -31,6 +31,7 @@ A modern rental property management and booking platform designed to streamline 
     - Apache HTTP Server installed and running on your system.
     - MySQL installed and running on your system.
     - An active [Twilio](https://www.twilio.com/en-us) account and WhatsApp Sandbox.
+    - An active [Midtrans](https://midtrans.com) account.
 
 2. **Twilio Account Setup**
     - Visit the official [Twilio website](https://www.twilio.com/en-us).
@@ -39,32 +40,39 @@ A modern rental property management and booking platform designed to streamline 
     - Navigate to **Messaging > Overview** from the left navigation panel and click **Try WhatsApp**.
     - Follow the prompts to configure your WhatsApp Sandbox and copy the provided Twilio WhatsApp number for environment setup.
 
-3. **Clone the Repository**
+3. **Midtrans Account Setup**
+    - Visit the official [Midtrans website](https://midtrans.com).
+    - Sign up for a new account or log in to your existing account.
+    - Once in the dashboard, locate the **Environment** menu on the left panel and select **Sandbox**.
+    - Navigate to **Settings > Access Keys** on the left sidebar.
+    - Copy the generated **Server Key** to use during the environment configuration phase.
+
+4. **Clone the Repository**
 
 ```bash
 git clone https://github.com/Fikri-Rouzan/staykos.git
 cd staykos
 ```
 
-4. **Install Packages**
+5. **Install Packages**
 
 ```bash
 composer install
 ```
 
-5. **Copy Environment File**
+6. **Copy Environment File**
 
 ```bash
 cp .env.example .env
 ```
 
-6. **Generate Application Key**
+7. **Generate Application Key**
 
 ```bash
 php artisan key:generate
 ```
 
-7. **Configure Environment Variables**
+8. **Configure Environment Variables**
 
     Open the `.env` file and configure the following variables
 
@@ -86,25 +94,25 @@ php artisan key:generate
     MIDTRANS_IS_3DS=true
     ```
 
-8. **Run Migrations**
+9. **Run Migrations**
 
 ```bash
 php artisan migrate
 ```
 
-9. **Create Filament Admin User**
+10. **Create Filament Admin User**
 
 ```bash
 php artisan make:filament-user
 ```
 
-10. **Create Storage Link**
+11. **Create Storage Link**
 
 ```bash
 php artisan storage:link
 ```
 
-11. **Run the Program**
+12. **Run the Program**
 
 ```bash
 php artisan serve

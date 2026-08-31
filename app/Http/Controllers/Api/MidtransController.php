@@ -28,8 +28,9 @@ class MidtransController extends Controller
             return response()->json(['message' => 'Transaction not found'], 404);
         }
 
-        $sid    = getenv("TWILIO_ACCOUNT_SID");
-        $token  = getenv("TWILIO_AUTH_TOKEN");
+        $sid = getenv("TWILIO_ACCOUNT_SID");
+        $token = getenv("TWILIO_AUTH_TOKEN");
+        $fromNumber = getenv("TWILIO_WHATSAPP_NUMBER");
         $twilio = new Client($sid, $token);
 
         $message =
@@ -59,7 +60,7 @@ class MidtransController extends Controller
                     ->create(
                         "whatsapp:+62" . $transaction->phone,
                         array(
-                            "from" => "whatsapp:+14155238886",
+                            "from" => $fromNumber,
                             "body" => $message
                         )
                     );
