@@ -140,7 +140,7 @@
                                 </p>
                                 <div class="flex">
                                     @for ($i = 0; $i < $testimonial->rating; $i++)
-                                        <img src="{{ asset('assets/images/icons/Star 1.svg') }}"
+                                        <img src="{{ asset('assets/images/icons/star-1.svg') }}"
                                             class="w-[22px] h-[22px] flex shrink-0" alt="">
                                     @endfor
                                 </div>

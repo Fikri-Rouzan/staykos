@@ -1,26 +1,111 @@
 # StayKos
 
-## About StayKos
+## 📌 Description
 
-StayKos is a boarding house booking website where users can book accommodations online. The main purpose of this website is to make it easier for users to search for and book boarding houses conveniently based on the city or category they are looking for.
+A modern rental property management and booking platform designed to streamline room discovery and simplify reservation workflows for both tenants and property owners. The platform serves as an all-in-one solution for browsing available accommodations, processing bookings, and managing property listings efficiently.
 
-## Features
+---
 
--   Exploring Boarding Houses: Users can explore available boarding houses, view detailed information about them, discover offered bonuses, and read testimonials from other users.
--   Searching for Boarding Houses: Users can search for boarding houses by entering the name, city, or category of the boarding house they wish to book.
--   Booking: Users can book a boarding house by filling out a form that includes their full name, email, phone number, and the duration of their stay.
--   Payment: Users can decide whether to make a down payment or full payment and choose their preferred payment method.
--   Notification: Users will receive a WhatsApp notification containing booking details after completing the payment.
--   Check Booking Details: Users can check the details of the boarding house booking they have made by entering the booking ID, email, and phone number they have registered.
+## 🛠️ Tech Stack
 
-## Technologies Used
+| Category                     | Technologies Used         |
+| :--------------------------- | :------------------------ |
+| 🌐 **Programming Languages** | `PHP`, `JavaScript`       |
+| 🔩 **Templating**            | `Blade`                   |
+| 🧩 **Frameworks**            | `Laravel`, `Tailwind CSS` |
+| ⚛️ **Libraries**             | `Filament`, `Swiper`      |
+| 🗄️ **Database**              | `MySQL`                   |
+| ⚡ **Tool**                  | `Laragon`                 |
+| 💸 **Payment Gateway**       | `Midtrans`                |
+| 🔔 **Notification Service**  | `Twilio`                  |
+| 🚧 **Tunneling Service**     | `ngrok`                   |
 
--   Programming Languages: PHP and JavaScript.
--   Stylesheet Language: CSS.
--   Templating Engine: Blade.
--   Frameworks: Laravel, Filament, and Tailwind CSS.
--   Database: MySQL.
--   Payment Gateway: Midtrans.
--   Tunneling Service: Ngrok.
--   Notification Service: Twilio.
--   Software: Visual Studio Code and Laragon.
+---
+
+## ⚙️ Setup Instructions
+
+1. **Prerequisites**
+    - PHP 8.3 installed on your system.
+    - Git installed on your system.
+    - Composer installed on your system.
+    - Apache HTTP Server installed and running on your system.
+    - MySQL installed and running on your system.
+    - An active [Twilio](https://www.twilio.com/en-us) account and WhatsApp Sandbox.
+
+2. **Twilio Account Setup**
+    - Visit the official [Twilio website](https://www.twilio.com/en-us).
+    - Sign up for a new account or log in to your existing account.
+    - Once redirected to the console dashboard, copy your **Account SID** and **Auth Token** to use during the configuration phase.
+    - Navigate to **Messaging > Overview** from the left navigation panel and click **Try WhatsApp**.
+    - Follow the prompts to configure your WhatsApp Sandbox and copy the provided Twilio WhatsApp number for environment setup.
+
+3. **Clone the Repository**
+
+```bash
+git clone https://github.com/Fikri-Rouzan/staykos.git
+cd staykos
+```
+
+4. **Install Packages**
+
+```bash
+composer install
+```
+
+5. **Copy Environment File**
+
+```bash
+cp .env.example .env
+```
+
+6. **Generate Application Key**
+
+```bash
+php artisan key:generate
+```
+
+7. **Configure Environment Variables**
+
+    Open the `.env` file and configure the following variables
+
+    ```env
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=laravel
+    DB_USERNAME=root
+    DB_PASSWORD=
+
+    TWILIO_ACCOUNT_SID="YOUR_TWILIO_ACCOUNT_SID"
+    TWILIO_AUTH_TOKEN="YOUR_TWILIO_AUTH_TOKEN"
+    TWILIO_WHATSAPP_NUMBER="whatsapp:+YOUR_TWILIO_WHATSAPP_NUMBER"
+
+    MIDTRANS_SERVER_KEY="YOUR_MIDTRANS_SERVER_KEY"
+    MIDTRANS_IS_PRODUCTION=false
+    MIDTRANS_IS_SANITIZED=true
+    MIDTRANS_IS_3DS=true
+    ```
+
+8. **Run Migrations**
+
+```bash
+php artisan migrate
+```
+
+9. **Create Filament Admin User**
+
+```bash
+php artisan make:filament-user
+```
+
+10. **Create Storage Link**
+
+```bash
+php artisan storage:link
+```
+
+11. **Run the Program**
+
+```bash
+php artisan serve
+```
