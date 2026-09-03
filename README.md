@@ -13,7 +13,7 @@ A modern rental property management and booking platform designed to streamline 
 | 🌐 **Programming Languages** | `PHP`, `JavaScript`       |
 | 🔩 **Templating**            | `Blade`                   |
 | 🧩 **Frameworks**            | `Laravel`, `Tailwind CSS` |
-| ⚛️ **Libraries**             | `Filament`, `Swiper`      |
+| ⚛️ **Libraries**             | `filament`, `Swiper`      |
 | 🗄️ **Database**              | `MySQL`                   |
 | ⚡ **Tool**                  | `Laragon`                 |
 | 💸 **Payment Gateway**       | `Midtrans`                |
@@ -107,7 +107,7 @@ php artisan key:generate
 php artisan migrate
 ```
 
-11. **Create Filament Admin User**
+11. **Create filament Admin User**
 
 ```bash
 php artisan make:filament-user
